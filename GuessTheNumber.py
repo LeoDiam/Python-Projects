@@ -10,3 +10,4 @@ def guess(x):
 
 
 guess(int(input()))
+
