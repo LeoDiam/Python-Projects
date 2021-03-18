@@ -1,24 +1,38 @@
-def balance_or_not(delimeterssequence):
-    stack = []
-    for i in range(0, len(delimeterssequence)):
-        if delimeterssequence[1] == '}' or delimeterssequence[1] == ')' or delimeterssequence[1] == ']':
-            print('Not balanced')
-            break
-        elif delimeterssequence[i] == '{' or delimeterssequence[i] == '(' or delimeterssequence[i] == '[':
-            stack.append(delimeterssequence[i])
-        elif delimeterssequence[i] == '}' or delimeterssequence[i] == ')' or delimeterssequence[i] == ']':
-            if delimeterssequence[i] == '}' and '{' in stack:
-                stack.pop(stack.__getitem__('}'))
-            elif delimeterssequence[i] == ')' and '(' in stack:
-                stack.pop(stack.__getitem__(')'))
-            elif delimeterssequence[i] == ']' and '[' in stack:
-                stack.pop(stack.__getitem__(']'))
-        if not stack:
-            print("balanced")
-            break
-        else:
-            print("not balanced")
-            break
+def closes_b(x, y):
+    if x == '(' and y == ')':
+        return True
+    elif x == '[' and y == ']':
+        return True
+    elif x == '{' and y == '}':
+        return True
+    else:
+        return False
 
-    trial = ['(', ')', '{', '}']
-    balance_or_not(trial)
+
+def balance_check(insert):
+    stack = []
+    for i in insert:
+        if i in '({[':
+            stack.append(i)
+        elif i == stack[0] and i in ')]}':
+            return False
+        elif i in ')]}':
+            stack.append(i)
+    for j in stack:
+        for k in stack:
+            if closes_b(j,k):
+                stack.pop(j)
+                stack.pop(k)
+                continue
+
+    if(len(stack) == 0):
+        return True
+    else:
+        return False
+
+insert = ['(','(',')',')']
+if balance_check(insert):
+    print('balanced')
+else:
+    print('unbalanced')
+
