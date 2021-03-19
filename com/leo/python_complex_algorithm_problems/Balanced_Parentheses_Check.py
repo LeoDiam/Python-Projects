@@ -21,12 +21,14 @@ def balance(stringList):
             if len(stack) == 0:
                 isBalanced = False
             else:
-                 top = stack.pop()
-                 if not isMatch(top,sL):
-                     isBalanced = False
-        index +=1
+                top = stack.pop()
+                if not isMatch(top, sL):
+                    isBalanced = False
+        index += 1
     if len(stack) == 0 and isBalanced:
         return True
     else:
         return False
+
+
 print(balance('[{(){}[]}]'))

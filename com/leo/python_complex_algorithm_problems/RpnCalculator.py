@@ -24,3 +24,5 @@ def calculate(expressions):
 
 
 calculate([1, 2, 3, '*', '+', 2, '-'])
+
+# ka8e praxi einai dimelis
