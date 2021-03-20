@@ -13,3 +13,4 @@ def testFib(n):
         numCalls = 0
         print('fib of', i, '=', fib(i))
         print('fib called ', numCalls, 'times')
+testFib(2)
