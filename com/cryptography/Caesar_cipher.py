@@ -7,5 +7,6 @@ def caesar_cipher(plaintext, shift):
     return ''.join(ciphertext)
 
 
-ciphertext = caesar_cipher('IAMSEATEDINANOFFICE', 5)
+ciphertext = caesar_cipher('MELENEODYSSEA', 5)
 print(ciphertext)
+print('Decryption:', caesar_cipher(ciphertext,-5))
