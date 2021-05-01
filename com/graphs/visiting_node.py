@@ -20,6 +20,8 @@ def dfs(g, node):
 
 
 dfs(g, 0)
+print(g[0][0])
+
 # def dfs_stack(g, node):
 #     s = []
 #     visited = [ False ] * len(g)
